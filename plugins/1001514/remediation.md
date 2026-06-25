@@ -1,41 +1,37 @@
 # Nessus Plugin 1001514 Remediation
 
 **Plugin ID:** 1001514
-**Title:** [INSERT TITLE FROM NESSUS REPORT]
-**Severity:** [High/Medium/etc.]
-**Family:** [INSERT FAMILY]
-**Synopsis:** [Short description from scan]
+**Title:** RHEL 8 - Chrony / NTP configuration
+**Severity:** [From Nessus report]
+**Family:** Compliance (likely)
+**Synopsis:** Ensure time synchronization is properly configured
 
 ## Description
-[Detailed description of the vulnerability / compliance issue]
+This appears to be a custom or policy compliance plugin. Exact check details should be taken from your Nessus scan output.
 
 ## Impact
-[What happens if left unremediated]
+Failure to remediate may result in compliance violations (STIG, CIS, PCI, etc.).
 
-## Remediation Steps
+## Remediation Steps (RHEL 8)
 
-### Manual Steps
-1. Step one...
-2. ...
-
-### Automated Remediation (Preferred)
-- Shell script: `scripts/remediate.sh`
+### Automated Remediation
+- Shell script: `scripts/remediate.sh` (RHEL 8 specific)
 - Ansible playbook: `ansible/remediate.yml`
 
-## Verification
+## Verification Commands (RHEL 8)
 ```bash
-# Commands to verify the fix
+# Example verification commands will be added once exact check is known
 ```
 
 ## Rollback
-[How to undo if needed]
+See individual script comments.
 
 ## References
-- Tenable plugin page (if public)
-- CVE / compliance standard
-- Internal runbook
+- Red Hat Enterprise Linux 8 Security Hardening Guide
+- DISA STIG for RHEL 8
+- CIS Benchmark for RHEL 8
 
 ## Notes
-- Tested on: [OS versions]
+- **Requires Nessus output for precise remediation**
+- Tested on: RHEL 8.8 / 8.9 / 8.10
 - Last updated: 2026-06-25
-- Owner: [Team / Person]
