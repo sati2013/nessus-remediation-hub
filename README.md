@@ -38,3 +38,8 @@ TBD – standard PR process once development begins.
 ## License
 
 Private repository. Internal use only.
+## STIG Mapping
+
+All plugins are mapped to official **DISA STIG for Red Hat Enterprise Linux 8**.
+
+See individual `plugins/<id>/remediation.md` for the exact `RHEL-08-XXXX` rule and `V-XXXXXX` finding.
