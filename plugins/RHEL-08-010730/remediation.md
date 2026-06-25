@@ -1,24 +1,20 @@
 # RHEL-08-010730 Remediation
 
 **STIG Rule:** RHEL-08-010730  
-**Nessus Plugin ID:** [To be filled per scanner – different scanners use different IDs]
+**Nessus Plugin ID:** [Fill in from your Nessus scan]
 
-**Title:** RHEL 8 must limit the number of concurrent sessions to ten for all accounts and/or account types.
+**Title:** All RHEL 8 local interactive user home directories must have mode 0750 or less permissive.
 
-## Description
-RHEL 8 must limit the number of concurrent sessions to ten for all accounts and/or account types.
+## Requirement
+Excessive permissions on home directories may allow unauthorized access.
 
-## Remediation (RHEL 8)
+## Official STIG Fix
+Change the mode of interactive users' home directories to 0750 or less permissive.
 
-### Automated
-- `scripts/remediate.sh`
-- `ansible/remediate.yml`
+## Automated Remediation (RHEL 8)
+The script in `scripts/remediate.sh` implements the STIG recommendation.
 
 ## Verification
-See script output and STIG check commands.
-
-## References
-- DISA STIG Red Hat Enterprise Linux 8
-- https://www.stigviewer.com/stigs/red_hat_enterprise_linux_8
+Run the STIG check command from the official STIG.
 
 **Last Updated:** 2026-06-25

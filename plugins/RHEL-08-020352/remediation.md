@@ -1,24 +1,20 @@
 # RHEL-08-020352 Remediation
 
 **STIG Rule:** RHEL-08-020352  
-**Nessus Plugin ID:** [To be filled per scanner – different scanners use different IDs]
+**Nessus Plugin ID:** [Fill in from your Nessus scan]
 
-**Title:** The RHEL 8 operating system must implement non-executable data to protect its memory from unauthorized code execution.
+**Title:** RHEL 8 must set the umask value to 077 for all local interactive user accounts.
 
-## Description
-The RHEL 8 operating system must implement non-executable data to protect its memory from unauthorized code execution.
+## Requirement
+The umask controls the default access mode assigned to newly created files. A umask of 077 limits new files to mode 600 or less permissive.
 
-## Remediation (RHEL 8)
+## Official STIG Fix
+Remove any umask statement that is less restrictive than 077 from all local interactive user initialization files.
 
-### Automated
-- `scripts/remediate.sh`
-- `ansible/remediate.yml`
+## Automated Remediation (RHEL 8)
+The script in `scripts/remediate.sh` implements the STIG recommendation.
 
 ## Verification
-See script output and STIG check commands.
-
-## References
-- DISA STIG Red Hat Enterprise Linux 8
-- https://www.stigviewer.com/stigs/red_hat_enterprise_linux_8
+Run the STIG check command from the official STIG.
 
 **Last Updated:** 2026-06-25

@@ -1,24 +1,20 @@
 # RHEL-08-010610 Remediation
 
 **STIG Rule:** RHEL-08-010610  
-**Nessus Plugin ID:** [To be filled per scanner – different scanners use different IDs]
+**Nessus Plugin ID:** [Fill in from your Nessus scan]
 
-**Title:** RHEL 8 must display the Standard Mandatory DOD Notice and Consent Banner before granting local or remote access.
+**Title:** RHEL 8 must prevent code from being executed on file systems used with removable media.
 
-## Description
-RHEL 8 must display the Standard Mandatory DOD Notice and Consent Banner before granting local or remote access.
+## Requirement
+The noexec mount option prevents execution of binaries on removable media.
 
-## Remediation (RHEL 8)
+## Official STIG Fix
+Configure /etc/fstab to use the noexec option on removable media.
 
-### Automated
-- `scripts/remediate.sh`
-- `ansible/remediate.yml`
+## Automated Remediation (RHEL 8)
+The script in `scripts/remediate.sh` implements the STIG recommendation.
 
 ## Verification
-See script output and STIG check commands.
-
-## References
-- DISA STIG Red Hat Enterprise Linux 8
-- https://www.stigviewer.com/stigs/red_hat_enterprise_linux_8
+Run the STIG check command from the official STIG.
 
 **Last Updated:** 2026-06-25

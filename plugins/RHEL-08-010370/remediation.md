@@ -1,24 +1,20 @@
 # RHEL-08-010370 Remediation
 
 **STIG Rule:** RHEL-08-010370  
-**Nessus Plugin ID:** [To be filled per scanner – different scanners use different IDs]
+**Nessus Plugin ID:** [Fill in from your Nessus scan]
 
-**Title:** RHEL 8 must implement address space layout randomization (ASLR) to protect its memory from unauthorized code execution.
+**Title:** RHEL 8 must implement ASLR.
 
-## Description
-RHEL 8 must implement address space layout randomization (ASLR) to protect its memory from unauthorized code execution.
+## Requirement
+Address Space Layout Randomization must be enabled.
 
-## Remediation (RHEL 8)
+## Official STIG Fix
+Set kernel.randomize_va_space=2
 
-### Automated
-- `scripts/remediate.sh`
-- `ansible/remediate.yml`
+## Automated Remediation (RHEL 8)
+The script in `scripts/remediate.sh` implements the STIG recommendation.
 
 ## Verification
-See script output and STIG check commands.
-
-## References
-- DISA STIG Red Hat Enterprise Linux 8
-- https://www.stigviewer.com/stigs/red_hat_enterprise_linux_8
+Run the STIG check command from the official STIG.
 
 **Last Updated:** 2026-06-25

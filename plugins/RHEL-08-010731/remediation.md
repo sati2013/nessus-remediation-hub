@@ -1,24 +1,20 @@
 # RHEL-08-010731 Remediation
 
 **STIG Rule:** RHEL-08-010731  
-**Nessus Plugin ID:** [To be filled per scanner – different scanners use different IDs]
+**Nessus Plugin ID:** [Fill in from your Nessus scan]
 
-**Title:** RHEL 8 must limit the number of concurrent sessions.
+**Title:** RHEL 8 must limit concurrent sessions.
 
-## Description
-RHEL 8 must limit the number of concurrent sessions.
+## Requirement
+Limit the number of concurrent sessions.
 
-## Remediation (RHEL 8)
+## Official STIG Fix
+Set maxlogins in /etc/security/limits.conf
 
-### Automated
-- `scripts/remediate.sh`
-- `ansible/remediate.yml`
+## Automated Remediation (RHEL 8)
+The script in `scripts/remediate.sh` implements the STIG recommendation.
 
 ## Verification
-See script output and STIG check commands.
-
-## References
-- DISA STIG Red Hat Enterprise Linux 8
-- https://www.stigviewer.com/stigs/red_hat_enterprise_linux_8
+Run the STIG check command from the official STIG.
 
 **Last Updated:** 2026-06-25

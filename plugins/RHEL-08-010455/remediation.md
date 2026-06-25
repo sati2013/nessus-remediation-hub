@@ -1,24 +1,20 @@
 # RHEL-08-010455 Remediation
 
 **STIG Rule:** RHEL-08-010455  
-**Nessus Plugin ID:** [To be filled per scanner – different scanners use different IDs]
+**Nessus Plugin ID:** [Fill in from your Nessus scan]
 
-**Title:** RHEL 8 must allocate audit storage capacity to proportionally accommodate the logging requirements of all authenticated users.
+**Title:** RHEL 8 must allocate audit storage capacity proportionally.
 
-## Description
-RHEL 8 must allocate audit storage capacity to proportionally accommodate the logging requirements of all authenticated users.
+## Requirement
+Audit logs must have sufficient space.
 
-## Remediation (RHEL 8)
+## Official STIG Fix
+Configure audit log rotation and size limits.
 
-### Automated
-- `scripts/remediate.sh`
-- `ansible/remediate.yml`
+## Automated Remediation (RHEL 8)
+The script in `scripts/remediate.sh` implements the STIG recommendation.
 
 ## Verification
-See script output and STIG check commands.
-
-## References
-- DISA STIG Red Hat Enterprise Linux 8
-- https://www.stigviewer.com/stigs/red_hat_enterprise_linux_8
+Run the STIG check command from the official STIG.
 
 **Last Updated:** 2026-06-25

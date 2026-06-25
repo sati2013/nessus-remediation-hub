@@ -1,24 +1,20 @@
 # RHEL-08-010780 Remediation
 
 **STIG Rule:** RHEL-08-010780  
-**Nessus Plugin ID:** [To be filled per scanner – different scanners use different IDs]
+**Nessus Plugin ID:** [Fill in from your Nessus scan]
 
-**Title:** RHEL 8 must configure the use of the pam_faillock.so module.
+**Title:** RHEL 8 must use pam_faillock to lock accounts after failed logins.
 
-## Description
-RHEL 8 must configure the use of the pam_faillock.so module.
+## Requirement
+Accounts must be locked after 3 failed attempts.
 
-## Remediation (RHEL 8)
+## Official STIG Fix
+Configure pam_faillock.
 
-### Automated
-- `scripts/remediate.sh`
-- `ansible/remediate.yml`
+## Automated Remediation (RHEL 8)
+The script in `scripts/remediate.sh` implements the STIG recommendation.
 
 ## Verification
-See script output and STIG check commands.
-
-## References
-- DISA STIG Red Hat Enterprise Linux 8
-- https://www.stigviewer.com/stigs/red_hat_enterprise_linux_8
+Run the STIG check command from the official STIG.
 
 **Last Updated:** 2026-06-25
