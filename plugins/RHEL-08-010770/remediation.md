@@ -12,7 +12,7 @@ Local initialization files are used to configure the user's shell environment. M
 Set the mode of all local initialization files to 0740 or less permissive.
 
 ## Source
-Tenable Audit: DISA Red Hat Enterprise Linux 8 STIG (v2r6 and later)
+Tenable Audit: DISA Red Hat Enterprise Linux 8 STIG (v2r6+)
 
 ## Automated Remediation (RHEL 8)
 See `scripts/remediate.sh` and `scripts/check.sh`.

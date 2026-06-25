@@ -12,7 +12,7 @@ Passwords must contain at least one numeric character.
 Configure pwquality with dcredit=-1.
 
 ## Source
-Tenable Audit: DISA Red Hat Enterprise Linux 8 STIG (v2r6 and later)
+Tenable Audit: DISA Red Hat Enterprise Linux 8 STIG (v2r6+)
 
 ## Automated Remediation (RHEL 8)
 See `scripts/remediate.sh` and `scripts/check.sh`.

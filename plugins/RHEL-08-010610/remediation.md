@@ -12,7 +12,7 @@ The noexec mount option causes the system not to execute binary files on removab
 Configure /etc/fstab to use the noexec option on removable media.
 
 ## Source
-Tenable Audit: DISA Red Hat Enterprise Linux 8 STIG (v2r6 and later)
+Tenable Audit: DISA Red Hat Enterprise Linux 8 STIG (v2r6+)
 
 ## Automated Remediation (RHEL 8)
 See `scripts/remediate.sh` and `scripts/check.sh`.
