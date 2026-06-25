@@ -3,29 +3,30 @@
 **STIG Rule:** RHEL-08-010370  
 **Nessus Plugin ID:** [To be filled per scanner]
 
-**Title:** RHEL 8 must implement address space layout randomization (ASLR) to protect its memory from unauthorized code execution.
+**Title:** RHEL 8 must prevent the installation of software, patches, service packs, device drivers, or operating system components from a repository without verification they have been digitally signed using a certificate that is issued by a Certificate Authority (CA) that is recognized and approved by the organization.
 
 ## Requirement
-Address Space Layout Randomization (ASLR) makes it more difficult for attackers to predict memory addresses, thereby protecting the system from unauthorized code execution.
+The system must verify that software packages are digitally signed before installation to ensure they come from a trusted source.
 
 ## Official STIG Fix
-Set the kernel parameter `kernel.randomize_va_space` to `2`.
+Ensure `gpgcheck` is enabled in the DNF/YUM configuration.
 
 ```bash
-echo "kernel.randomize_va_space=2" > /etc/sysctl.d/99-stig-aslr.conf
-sysctl --system
+sed -i 's/^gpgcheck=.*/gpgcheck=1/' /etc/dnf/dnf.conf
 ```
 
 ## Source
-DISA Red Hat Enterprise Linux 8 STIG v2r7
+DISA Red Hat Enterprise Linux 8 STIG v2r7  
+Tenable Audit: DISA_STIG_Red_Hat_Enterprise_Linux_8_v2r7
 
 ## Automated Remediation (RHEL 8)
 See `scripts/remediate.sh` and `scripts/check.sh`.
 
 ## Verification
-Run the following command and verify it returns `2`:
+Run:
 ```bash
-sysctl kernel.randomize_va_space
+grep "^gpgcheck" /etc/dnf/dnf.conf
 ```
+It should return `gpgcheck=1`.
 
 **Last Updated:** 2026-06-25

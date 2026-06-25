@@ -1,17 +1,15 @@
 #!/bin/bash
 # RHEL-08-010370 Check Script
-# Verify ASLR is set to 2
+# Verify gpgcheck is enabled
 
 set -euo pipefail
 
 echo "Checking STIG RHEL-08-010370..."
 
-value=$(sysctl -n kernel.randomize_va_space 2>/dev/null || echo "0")
-
-if [ "$value" -eq 2 ]; then
-    echo "PASS: ASLR is correctly set to 2"
+if grep -q "^gpgcheck=1" /etc/dnf/dnf.conf; then
+    echo "PASS: gpgcheck is enabled"
     exit 0
 else
-    echo "FAIL: kernel.randomize_va_space is set to $value (should be 2)"
+    echo "FAIL: gpgcheck is not enabled or not set to 1"
     exit 1
 fi

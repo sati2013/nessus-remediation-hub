@@ -1,14 +1,13 @@
 #!/bin/bash
 # RHEL-08-010370 Remediation Script
-# Enable ASLR (kernel.randomize_va_space=2)
+# Enable gpgcheck in dnf
 
 set -euo pipefail
 
 echo "Applying STIG RHEL-08-010370..."
 
-echo "kernel.randomize_va_space=2" > /etc/sysctl.d/99-stig-aslr.conf
-sysctl --system
+sed -i 's/^gpgcheck=.*/gpgcheck=1/' /etc/dnf/dnf.conf
 
-echo "ASLR enabled (kernel.randomize_va_space=2)"
+echo "gpgcheck enabled in dnf configuration"
 
 echo "STIG RHEL-08-010370 remediation completed."
