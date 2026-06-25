@@ -6,7 +6,7 @@
 **Title:** All RHEL 8 local interactive user home directory files must have mode 0750 or less permissive.
 
 ## Requirement
-Files inside home directories must have appropriate permissions to prevent unauthorized access.
+Files inside home directories must have appropriate permissions.
 
 ## Official STIG Fix
 Set proper permissions on files inside user home directories.

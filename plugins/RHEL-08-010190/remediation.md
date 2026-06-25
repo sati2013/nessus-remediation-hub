@@ -6,7 +6,7 @@
 **Title:** A sticky bit must be set on all RHEL 8 public directories to prevent unauthorized and unintended information transferred via shared system resources.
 
 ## Requirement
-Preventing unauthorized information transfers mitigates the risk of information produced by prior users from being available to current users after resources are released.
+Preventing unauthorized information transfers mitigates the risk of information produced by the actions of prior users from being available to current users after those resources have been released.
 
 ## Official STIG Fix
 Set the sticky bit on all world-writable directories using chmod 1777.
