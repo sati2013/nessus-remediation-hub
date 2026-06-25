@@ -6,18 +6,27 @@
 **Title:** A sticky bit must be set on all RHEL 8 public directories to prevent unauthorized and unintended information transferred via shared system resources.
 
 ## Requirement
-World-writable directories must have the sticky bit set to prevent unauthorized information transfer.
+Preventing unauthorized information transfers mitigates the risk of information, including encrypted representations of information, produced by the actions of prior users/roles (or the actions of processes acting on behalf of prior users/roles) from being available to any current users/roles (or current processes) that obtain access to shared system resources (e.g., registers, main memory, hard disks) after those resources have been released back to information systems.
 
 ## Official STIG Fix
-Set the sticky bit on all world-writable directories (chmod 1777).
+Configure all world-writable directories to have the sticky bit set to prevent unauthorized and unintended information transferred via shared system resources.
+
+Set the sticky bit on all world-writable directories using the command (replace "[World-Writable Directory]" with any directory path missing the sticky bit):
+
+```bash
+sudo -S -p '' chmod 1777 [World-Writable Directory]
+```
 
 ## Source
-Tenable Audit: DISA Red Hat Enterprise Linux 8 STIG (v2r6 and later)
+Tenable Audit: DISA Red Hat Enterprise Linux 8 STIG v2r6  
+**Status:** This audit has been **deprecated** and will be removed in a future update.
 
-## Automated Remediation (RHEL 8)
-See `scripts/remediate.sh` and `scripts/check.sh`.
+See: https://www.tenable.com/audits/items/DISA_STIG_Red_Hat_Enterprise_Linux_8_v2r6.audit:d5db66af96997b807c4310b38c8133ed
 
 ## Verification
-Run `scripts/check.sh`
+Check for world-writable directories without the sticky bit:
+```bash
+find / -type d -perm -0002 ! -perm -1000 2>/dev/null
+```
 
 **Last Updated:** 2026-06-25
