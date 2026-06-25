@@ -3,13 +3,17 @@
 **STIG Rule:** RHEL-08-010190  
 **Nessus Plugin ID:** [To be filled per scanner]
 
-**Title:** A sticky bit must be set on all RHEL 8 public directories to prevent unauthorized and unintended information transferred via shared system resources.
+**Title:** RHEL 8 must set the sticky bit on all public directories.
 
 ## Requirement
-Preventing unauthorized information transfers mitigates the risk of information produced by the actions of prior users from being available to current users after those resources have been released.
+Public directories must have the sticky bit set to prevent users from deleting or renaming files they do not own.
 
 ## Official STIG Fix
-Set the sticky bit on all world-writable directories using chmod 1777.
+Set the sticky bit on all world-writable public directories.
+
+```bash
+find / -type d -perm -0002 ! -perm -1000 -exec chmod +t {} + 2>/dev/null || true
+```
 
 ## Source
 DISA Red Hat Enterprise Linux 8 STIG v2r7
@@ -18,6 +22,10 @@ DISA Red Hat Enterprise Linux 8 STIG v2r7
 See `scripts/remediate.sh` and `scripts/check.sh`.
 
 ## Verification
-Run `scripts/check.sh`
+Run:
+```bash
+find / -type d -perm -0002 ! -perm -1000 2>/dev/null
+```
+No output means all public directories have the sticky bit set.
 
 **Last Updated:** 2026-06-25
