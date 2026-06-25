@@ -1,37 +1,33 @@
-# Nessus Plugin 1001498 Remediation
+# Nessus Plugin 1001498 – RHEL 8 STIG Remediation
 
-**Plugin ID:** 1001498
-**Title:** RHEL 8 - Unnecessary services disabled
-**Severity:** [From Nessus report]
-**Family:** Compliance (likely)
-**Synopsis:** Disable common unnecessary services (e.g. avahi, cups, etc.)
+**Plugin ID:** 1001498  
+**Corresponding STIG Rule:** RHEL-08-040350  
+**STIG Finding:** V-230557  
+**Title:** RHEL 8 must disable unnecessary services
 
 ## Description
-This appears to be a custom or policy compliance plugin. Exact check details should be taken from your Nessus scan output.
+This Nessus plugin corresponds to the DISA STIG requirement above for Red Hat Enterprise Linux 8.
 
-## Impact
-Failure to remediate may result in compliance violations (STIG, CIS, PCI, etc.).
+## Remediation (RHEL 8)
 
-## Remediation Steps (RHEL 8)
+### Recommended Commands
+See the automated script in `scripts/remediate.sh`.
 
-### Automated Remediation
-- Shell script: `scripts/remediate.sh` (RHEL 8 specific)
-- Ansible playbook: `ansible/remediate.yml`
+### Manual Steps
+1. Apply the STIG rule using `oscap` or manually via the commands in the script.
+2. Verify with the STIG check command.
 
-## Verification Commands (RHEL 8)
+## Verification
 ```bash
-# Example verification commands will be added once exact check is known
+# Example STIG check (adjust per rule)
+oscap xccdf eval --profile xccdf_org.ssgproject.content_profile_stig --rule RHEL-08-040350 /usr/share/xml/scap/ssg/content/ssg-rhel8-ds.xml
 ```
 
 ## Rollback
-See individual script comments.
+See script comments.
 
 ## References
-- Red Hat Enterprise Linux 8 Security Hardening Guide
-- DISA STIG for RHEL 8
-- CIS Benchmark for RHEL 8
+- DISA STIG Red Hat Enterprise Linux 8: https://www.stigviewer.com/stigs/red_hat_enterprise_linux_8
+- Red Hat STIG Guide: https://static.open-scap.org/ssg-guides/ssg-rhel8-guide-stig.html
 
-## Notes
-- **Requires Nessus output for precise remediation**
-- Tested on: RHEL 8.8 / 8.9 / 8.10
-- Last updated: 2026-06-25
+**Last updated:** 2026-06-25
