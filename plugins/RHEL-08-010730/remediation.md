@@ -1,20 +1,20 @@
 # RHEL-08-010730 Remediation
 
 **STIG Rule:** RHEL-08-010730  
-**Nessus Plugin ID:** [Fill in from your Nessus scan]
+**Nessus Plugin ID:** [To be filled per scanner]
 
 **Title:** All RHEL 8 local interactive user home directories must have mode 0750 or less permissive.
 
 ## Requirement
-Excessive permissions on home directories may allow unauthorized access.
+Excessive permissions on home directories may allow unauthorized access to user files by other users.
 
 ## Official STIG Fix
 Change the mode of interactive users' home directories to 0750 or less permissive.
 
 ## Automated Remediation (RHEL 8)
-The script in `scripts/remediate.sh` implements the STIG recommendation.
+See `scripts/remediate.sh` and `scripts/check.sh`.
 
 ## Verification
-Run the STIG check command from the official STIG.
+Run `scripts/check.sh`
 
 **Last Updated:** 2026-06-25

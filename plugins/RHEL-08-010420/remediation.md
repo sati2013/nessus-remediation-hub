@@ -1,20 +1,20 @@
 # RHEL-08-010420 Remediation
 
 **STIG Rule:** RHEL-08-010420  
-**Nessus Plugin ID:** [Fill in from your Nessus scan]
+**Nessus Plugin ID:** [To be filled per scanner]
 
-**Title:** RHEL 8 must use SHA-512 for password hashing.
+**Title:** RHEL 8 must be configured to use the pam_unix.so module with the sha512 option for password hashing.
 
 ## Requirement
-Passwords must be hashed with SHA-512.
+Passwords must be hashed using SHA-512.
 
 ## Official STIG Fix
-Configure authselect to use SHA-512.
+Configure authselect to use SHA-512 hashing.
 
 ## Automated Remediation (RHEL 8)
-The script in `scripts/remediate.sh` implements the STIG recommendation.
+See `scripts/remediate.sh` and `scripts/check.sh`.
 
 ## Verification
-Run the STIG check command from the official STIG.
+Run `scripts/check.sh`
 
 **Last Updated:** 2026-06-25

@@ -1,23 +1,20 @@
 # RHEL-08-010770 Remediation
 
 **STIG Rule:** RHEL-08-010770  
-**Nessus Plugin ID:** 1001490
+**Nessus Plugin ID:** [To be filled per scanner]
 
 **Title:** All RHEL 8 local initialization files must have mode 0740 or less permissive.
 
 ## Requirement
-Local initialization files are used to configure the user's shell environment. If these files have excessive permissions, unauthorized users may be able to modify them and potentially compromise user accounts.
+Local initialization files are used to configure the user's shell environment. Malicious modification of these files could compromise user accounts.
 
 ## Official STIG Fix
 Set the mode of all local initialization files to 0740 or less permissive.
 
 ## Automated Remediation (RHEL 8)
-The script in `scripts/remediate.sh` implements the STIG recommendation.
+See `scripts/remediate.sh` and `scripts/check.sh`.
 
 ## Verification
-```bash
-find /home -maxdepth 2 -name ".*" -type f -perm /0077 -exec ls -l {} \;
-```
-No output means all local initialization files have appropriate permissions (0740 or more restrictive).
+Run `scripts/check.sh`
 
 **Last Updated:** 2026-06-25

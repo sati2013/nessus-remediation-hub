@@ -1,20 +1,20 @@
 # RHEL-08-010731 Remediation
 
 **STIG Rule:** RHEL-08-010731  
-**Nessus Plugin ID:** [Fill in from your Nessus scan]
+**Nessus Plugin ID:** [To be filled per scanner]
 
-**Title:** RHEL 8 must limit concurrent sessions.
+**Title:** All RHEL 8 local interactive user home directory files must have mode 0750 or less permissive.
 
 ## Requirement
-Limit the number of concurrent sessions.
+Files inside home directories must have appropriate permissions.
 
 ## Official STIG Fix
-Set maxlogins in /etc/security/limits.conf
+Set proper permissions on files inside user home directories.
 
 ## Automated Remediation (RHEL 8)
-The script in `scripts/remediate.sh` implements the STIG recommendation.
+See `scripts/remediate.sh` and `scripts/check.sh`.
 
 ## Verification
-Run the STIG check command from the official STIG.
+Run `scripts/check.sh`
 
 **Last Updated:** 2026-06-25

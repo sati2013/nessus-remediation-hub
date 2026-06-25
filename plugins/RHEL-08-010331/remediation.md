@@ -1,20 +1,20 @@
 # RHEL-08-010331 Remediation
 
 **STIG Rule:** RHEL-08-010331  
-**Nessus Plugin ID:** [Fill in from your Nessus scan]
+**Nessus Plugin ID:** [To be filled per scanner]
 
-**Title:** RHEL 8 must verify certificates for package installation.
+**Title:** RHEL 8 must prevent the installation of patches, updates, and additional software without verification of the certificate.
 
 ## Requirement
-Packages must be signed and verified.
+Packages must be signed and verified before installation.
 
 ## Official STIG Fix
-Ensure gpgcheck is enabled in dnf/yum config.
+Ensure gpgcheck=1 is set in dnf/yum configuration.
 
 ## Automated Remediation (RHEL 8)
-The script in `scripts/remediate.sh` implements the STIG recommendation.
+See `scripts/remediate.sh` and `scripts/check.sh`.
 
 ## Verification
-Run the STIG check command from the official STIG.
+Run `scripts/check.sh`
 
 **Last Updated:** 2026-06-25

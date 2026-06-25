@@ -1,20 +1,20 @@
 # RHEL-08-010590 Remediation
 
 **STIG Rule:** RHEL-08-010590  
-**Nessus Plugin ID:** [Fill in from your Nessus scan]
+**Nessus Plugin ID:** [To be filled per scanner]
 
 **Title:** RHEL 8 must enable the hardware random number generator entropy gatherer service.
 
 ## Requirement
-The rngd service provides entropy from hardware RNG.
+The rngd service provides entropy from hardware RNG devices to the system.
 
 ## Official STIG Fix
 Enable and start the rngd service.
 
 ## Automated Remediation (RHEL 8)
-The script in `scripts/remediate.sh` implements the STIG recommendation.
+See `scripts/remediate.sh` and `scripts/check.sh`.
 
 ## Verification
-Run the STIG check command from the official STIG.
+Run `scripts/check.sh`
 
 **Last Updated:** 2026-06-25

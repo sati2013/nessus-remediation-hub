@@ -1,20 +1,20 @@
 # RHEL-08-010660 Remediation
 
 **STIG Rule:** RHEL-08-010660  
-**Nessus Plugin ID:** [Fill in from your Nessus scan]
+**Nessus Plugin ID:** [To be filled per scanner]
 
-**Title:** RHEL 8 must enforce password complexity (special character).
+**Title:** RHEL 8 must enforce password complexity by requiring that at least one special character be used.
 
 ## Requirement
 Passwords must contain at least one special character.
 
 ## Official STIG Fix
-Configure pwquality with ocredit=-1
+Configure pwquality with ocredit=-1.
 
 ## Automated Remediation (RHEL 8)
-The script in `scripts/remediate.sh` implements the STIG recommendation.
+See `scripts/remediate.sh` and `scripts/check.sh`.
 
 ## Verification
-Run the STIG check command from the official STIG.
+Run `scripts/check.sh`
 
 **Last Updated:** 2026-06-25

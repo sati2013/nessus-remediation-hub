@@ -1,20 +1,20 @@
 # RHEL-08-010190 Remediation
 
 **STIG Rule:** RHEL-08-010190  
-**Nessus Plugin ID:** [Fill in from your Nessus scan]
+**Nessus Plugin ID:** [To be filled per scanner]
 
-**Title:** RHEL 8 must display the Standard Mandatory DOD Notice and Consent Banner.
+**Title:** RHEL 8 must display the Standard Mandatory DOD Notice and Consent Banner before granting remote access.
 
 ## Requirement
-The DOD banner must be displayed before access.
+The Standard Mandatory DOD Notice and Consent Banner must be displayed before granting access.
 
 ## Official STIG Fix
-Configure /etc/issue and sshd_config with the banner.
+Configure the DOD banner in /etc/issue and sshd_config.
 
 ## Automated Remediation (RHEL 8)
-The script in `scripts/remediate.sh` implements the STIG recommendation.
+See `scripts/remediate.sh` and `scripts/check.sh`.
 
 ## Verification
-Run the STIG check command from the official STIG.
+Run `scripts/check.sh`
 
 **Last Updated:** 2026-06-25
