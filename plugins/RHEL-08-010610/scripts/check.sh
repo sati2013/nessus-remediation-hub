@@ -1,3 +1,8 @@
 #!/bin/bash
-grep -E 'cdrom|floppy|usb' /etc/fstab | grep -q noexec && echo "PASS" || echo "FAIL"
-exit 0
+if grep -E 'cdrom|floppy|usb' /etc/fstab | grep -qv noexec; then
+    echo "FAIL: noexec missing on removable media"
+    exit 1
+else
+    echo "PASS: noexec set on removable media"
+    exit 0
+fi

@@ -1,3 +1,8 @@
 #!/bin/bash
-grep -q "deny = 3" /etc/security/faillock.conf && echo "PASS" || echo "FAIL"
-exit 0
+if grep -q "deny = 3" /etc/security/faillock.conf; then
+    echo "PASS: Account lockout set to 3 attempts"
+    exit 0
+else
+    echo "FAIL: Lockout setting incorrect"
+    exit 1
+fi

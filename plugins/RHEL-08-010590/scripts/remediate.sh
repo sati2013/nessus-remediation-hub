@@ -1,3 +1,3 @@
 #!/bin/bash
 systemctl enable --now rngd
-echo "rngd enabled" 
+echo "rngd service enabled and started" 
