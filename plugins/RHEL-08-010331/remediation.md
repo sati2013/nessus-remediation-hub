@@ -9,7 +9,10 @@
 Packages must be signed and verified before installation.
 
 ## Official STIG Fix
-Ensure gpgcheck=1 is set in dnf/yum configuration.
+Ensure gpgcheck=1 is enabled in dnf/yum configuration.
+
+## Source
+Tenable Audit: DISA Red Hat Enterprise Linux 8 STIG (v2r6 and later)
 
 ## Automated Remediation (RHEL 8)
 See `scripts/remediate.sh` and `scripts/check.sh`.

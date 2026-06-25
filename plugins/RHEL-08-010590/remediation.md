@@ -6,10 +6,13 @@
 **Title:** RHEL 8 must enable the hardware random number generator entropy gatherer service.
 
 ## Requirement
-The rngd service provides entropy from hardware RNG devices to the system.
+The rngd service provides entropy from hardware RNG devices.
 
 ## Official STIG Fix
 Enable and start the rngd service.
+
+## Source
+Tenable Audit: DISA Red Hat Enterprise Linux 8 STIG (v2r6 and later)
 
 ## Automated Remediation (RHEL 8)
 See `scripts/remediate.sh` and `scripts/check.sh`.

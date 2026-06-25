@@ -6,10 +6,13 @@
 **Title:** RHEL 8 must prevent code from being executed on file systems used with removable media.
 
 ## Requirement
-The noexec mount option causes the system not to execute binary files. This option must be used for mounting any file system not containing approved binary files.
+The noexec mount option causes the system not to execute binary files on removable media.
 
 ## Official STIG Fix
-Configure the /etc/fstab to use the noexec option on removable media.
+Configure /etc/fstab to use the noexec option on removable media.
+
+## Source
+Tenable Audit: DISA Red Hat Enterprise Linux 8 STIG (v2r6 and later)
 
 ## Automated Remediation (RHEL 8)
 See `scripts/remediate.sh` and `scripts/check.sh`.

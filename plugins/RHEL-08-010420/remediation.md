@@ -11,6 +11,9 @@ Passwords must be hashed using SHA-512.
 ## Official STIG Fix
 Configure authselect to use SHA-512 hashing.
 
+## Source
+Tenable Audit: DISA Red Hat Enterprise Linux 8 STIG (v2r6 and later)
+
 ## Automated Remediation (RHEL 8)
 See `scripts/remediate.sh` and `scripts/check.sh`.
 

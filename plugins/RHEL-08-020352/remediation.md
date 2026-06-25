@@ -11,6 +11,9 @@ The umask controls the default access mode assigned to newly created files. A um
 ## Official STIG Fix
 Remove any umask statement that is less restrictive than 077 from all local interactive user initialization files.
 
+## Source
+Tenable Audit: DISA Red Hat Enterprise Linux 8 STIG (v2r6 and later)
+
 ## Automated Remediation (RHEL 8)
 See `scripts/remediate.sh` and `scripts/check.sh`.
 
