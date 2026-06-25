@@ -6,10 +6,15 @@
 **Title:** RHEL 8 must implement address space layout randomization (ASLR) to protect its memory from unauthorized code execution.
 
 ## Requirement
-ASLR must be enabled to make it more difficult for attackers to predict memory addresses.
+Address Space Layout Randomization (ASLR) makes it more difficult for attackers to predict memory addresses, thereby protecting the system from unauthorized code execution.
 
 ## Official STIG Fix
-Set kernel.randomize_va_space=2.
+Set the kernel parameter `kernel.randomize_va_space` to `2`.
+
+```bash
+echo "kernel.randomize_va_space=2" > /etc/sysctl.d/99-stig-aslr.conf
+sysctl --system
+```
 
 ## Source
 Tenable Audit: DISA Red Hat Enterprise Linux 8 STIG (v2r6+)
@@ -18,6 +23,9 @@ Tenable Audit: DISA Red Hat Enterprise Linux 8 STIG (v2r6+)
 See `scripts/remediate.sh` and `scripts/check.sh`.
 
 ## Verification
-Run `scripts/check.sh`
+Run the following command and verify it returns `2`:
+```bash
+sysctl kernel.randomize_va_space
+```
 
 **Last Updated:** 2026-06-25
