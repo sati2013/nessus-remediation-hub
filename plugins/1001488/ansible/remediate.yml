@@ -1,9 +1,0 @@
----
-# Ansible playbook for Nessus Plugin 1001488
-- name: Remediate Nessus Plugin 1001488
-  hosts: all
-  become: yes
-  tasks:
-    - name: Placeholder task - implement remediation
-      debug:
-        msg: "Implement tasks for plugin 1001488 here"
