@@ -12,7 +12,7 @@ Preventing unauthorized information transfers mitigates the risk of information 
 Set the sticky bit on all world-writable directories using chmod 1777.
 
 ## Source
-Tenable Audit: DISA Red Hat Enterprise Linux 8 STIG (v2r6+)
+DISA Red Hat Enterprise Linux 8 STIG v2r7
 
 ## Automated Remediation (RHEL 8)
 See `scripts/remediate.sh` and `scripts/check.sh`.

@@ -12,7 +12,7 @@ Audit logs must have sufficient space to accommodate the logging requirements of
 Configure audit log rotation and size limits in auditd.conf.
 
 ## Source
-Tenable Audit: DISA Red Hat Enterprise Linux 8 STIG (v2r6+)
+DISA Red Hat Enterprise Linux 8 STIG v2r7
 
 ## Automated Remediation (RHEL 8)
 See `scripts/remediate.sh` and `scripts/check.sh`.

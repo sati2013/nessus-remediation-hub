@@ -12,7 +12,7 @@ Passwords must contain at least one special character.
 Configure pwquality with ocredit=-1.
 
 ## Source
-Tenable Audit: DISA Red Hat Enterprise Linux 8 STIG (v2r6+)
+DISA Red Hat Enterprise Linux 8 STIG v2r7
 
 ## Automated Remediation (RHEL 8)
 See `scripts/remediate.sh` and `scripts/check.sh`.

@@ -12,7 +12,7 @@ Excessive permissions on home directories may allow unauthorized access to user 
 Change the mode of interactive users' home directories to 0750 or less permissive.
 
 ## Source
-Tenable Audit: DISA Red Hat Enterprise Linux 8 STIG (v2r6+)
+DISA Red Hat Enterprise Linux 8 STIG v2r7
 
 ## Automated Remediation (RHEL 8)
 See `scripts/remediate.sh` and `scripts/check.sh`.

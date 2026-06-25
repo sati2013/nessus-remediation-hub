@@ -12,7 +12,7 @@ Packages must be signed and verified before installation.
 Ensure gpgcheck=1 is enabled in dnf/yum configuration.
 
 ## Source
-Tenable Audit: DISA Red Hat Enterprise Linux 8 STIG (v2r6+)
+DISA Red Hat Enterprise Linux 8 STIG v2r7
 
 ## Automated Remediation (RHEL 8)
 See `scripts/remediate.sh` and `scripts/check.sh`.
